@@ -1,0 +1,25 @@
+{
+  "name": "soap-demo",
+  "version": "1.0.0",
+  "description": "soap demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymyang/soap-demo.git"
+  },
+  "keywords": [
+    "soap"
+  ],
+  "author": "ymyang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ymyang/soap-demo/issues"
+  },
+  "homepage": "https://github.com/ymyang/soap-demo#readme",
+  "dependencies": {
+    "soap": "^0.11.1"
+  }
+}

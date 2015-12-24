@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.bossagent.vac.unicom.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap.bossagent.vac.unicom.com" xmlns:intf="http://soap.bossagent.vac.unicom.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://req.sync.soap.bossagent.vac.unicom.com" xmlns:tns2="http://rsp.sync.soap.bossagent.vac.unicom.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--WSDL created by Apache Axis version: 1.4
+    Built on Apr 22, 2006 (06:55:48 PDT)-->
+    <wsdl:types>
+        <schema targetNamespace="http://req.sync.soap.bossagent.vac.unicom.com" xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://rsp.sync.soap.bossagent.vac.unicom.com"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="OrderRelationUpdateNotifyRequest">
+                <sequence>
+                    <element name="recordSequenceId" nillable="true" type="soapenc:string"/>
+                    <element name="userIdType" nillable="true" type="soapenc:int"/>
+                    <element name="userId" nillable="true" type="soapenc:string"/>
+                    <element name="serviceType" nillable="true" type="soapenc:string"/>
+                    <element name="spId" nillable="true" type="soapenc:string"/>
+                    <element name="productId" nillable="true" type="soapenc:string"/>
+                    <element name="updateType" nillable="true" type="soapenc:int"/>
+                    <element name="updateTime" nillable="true" type="soapenc:string"/>
+                    <element name="updateDesc" nillable="true" type="soapenc:string"/>
+                    <element name="linkId" nillable="true" type="soapenc:string"/>
+                    <element name="content" nillable="true" type="soapenc:string"/>
+                    <element name="effectiveDate" nillable="true" type="soapenc:string"/>
+                    <element name="expireDate" nillable="true" type="soapenc:string"/>
+                    <element name="time_stamp" nillable="true" type="soapenc:string"/>
+                    <element name="encodeStr" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema targetNamespace="http://rsp.sync.soap.bossagent.vac.unicom.com" xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://req.sync.soap.bossagent.vac.unicom.com"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="OrderRelationUpdateNotifyResponse">
+                <sequence>
+                    <element name="recordSequenceId" nillable="true" type="soapenc:string"/>
+                    <element name="resultCode" type="xsd:int"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </wsdl:types>
+
+    <wsdl:message name="orderRelationUpdateNotifyResponse">
+
+        <wsdl:part name="orderRelationUpdateNotifyReturn" type="tns2:OrderRelationUpdateNotifyResponse"/>
+
+    </wsdl:message>
+
+    <wsdl:message name="orderRelationUpdateNotifyRequest">
+
+        <wsdl:part name="orderRelationUpdateNotifyRequest" type="tns1:OrderRelationUpdateNotifyRequest"/>
+
+    </wsdl:message>
+
+    <wsdl:portType name="SyncNotifySPService">
+
+        <wsdl:operation name="orderRelationUpdateNotify" parameterOrder="orderRelationUpdateNotifyRequest">
+
+            <wsdl:input message="impl:orderRelationUpdateNotifyRequest" name="orderRelationUpdateNotifyRequest"/>
+
+            <wsdl:output message="impl:orderRelationUpdateNotifyResponse" name="orderRelationUpdateNotifyResponse"/>
+
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+    <wsdl:binding name="SyncNotifySPSoapBinding" type="impl:SyncNotifySPService">
+
+        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="orderRelationUpdateNotify">
+
+            <wsdlsoap:operation soapAction=""/>
+
+            <wsdl:input name="orderRelationUpdateNotifyRequest">
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.bossagent.vac.unicom.com" use="encoded"/>
+
+            </wsdl:input>
+
+            <wsdl:output name="orderRelationUpdateNotifyResponse">
+
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://soap.bossagent.vac.unicom.com" use="encoded"/>
+
+            </wsdl:output>
+
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+    <wsdl:service name="SyncNotifySPServiceService">
+
+        <wsdl:port binding="impl:SyncNotifySPSoapBinding" name="SyncNotifySP">
+
+            <wsdlsoap:address location="http://127.0.0.1:8080/axis/services/SyncNotifySP"/>
+
+        </wsdl:port>
+
+    </wsdl:service>
+
+</wsdl:definitions>
