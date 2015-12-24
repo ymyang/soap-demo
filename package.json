@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ymyang/soap-demo#readme",
   "dependencies": {
-    "soap": "^0.11.1"
+    "soap": "^0.11.1",
+    "soap-server": "^0.1.0"
   }
 }
